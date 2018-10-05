@@ -13,6 +13,14 @@ class Book
         @current_page = page
     end
 
+    def reading_percentage()
+        return ((@current_page.to_f / @pages)*100).round(2)
+    end
+
+    def to_s
+        return "Book(title=#{@title}, author=#{@author}, pages=#{@pages})"
+    end
+
 end
 
 class EBook < Book
@@ -22,4 +30,8 @@ class EBook < Book
         super(title, author, pages)
         @url = url
     end
+
+    def to_s
+        return "EBook(title=#{@title}, author=#{@author}, pages=#{@pages}, url=#{@url})"
+    end    
 end
